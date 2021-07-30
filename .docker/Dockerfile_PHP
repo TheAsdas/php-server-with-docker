@@ -1,0 +1,26 @@
+FROM php:8.0.8-apache
+WORKDIR /var/www/html
+VOLUME /var/www/html
+
+# Actualizar y configurar paquetes:
+RUN apt-get update && apt upgrade -y && apt install -y \ 
+    apt-utils \
+    libfreetype6-dev \
+    libjpeg62-turbo-dev \
+    libmcrypt-dev \
+    libpng-dev \
+    libzip-dev \
+    yum \
+    && a2enmod rewrite
+
+# Instalar composer:
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+# Instalar extensiones de PHP
+# Incluye XDebug - Una herramienta de depuración PHP.
+# Lista de extensiones PHP y cómo instalarlas:
+# https://gist.github.com/hoandang/88bfb1e30805df6d1539640fc1719d12
+RUN \
+    #docker-php-ext-install mysqli zip gd fileinfo json mbstring xml \
+    pecl install xdebug && docker-php-ext-enable xdebug
+EXPOSE 80

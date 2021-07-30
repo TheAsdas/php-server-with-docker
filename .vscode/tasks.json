@@ -1,0 +1,26 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "typescript",
+            "tsconfig": "tsconfig.json",
+            "option": "watch",
+            "problemMatcher": [
+                "$tsc-watch"
+            ],
+            "group": "build",
+            "label": "Typescript - Watch",
+            "runOptions": {
+                "runOn": "folderOpen"
+            }
+        },
+        {
+            "type": "shell",
+            "label": "Typescript Cleaner - Watch",
+            "command": "ts-cleaner -d ./src/js -s ./src/ts -w",
+            "runOptions": {
+                "runOn": "folderOpen"
+            }
+        }
+    ]
+}
