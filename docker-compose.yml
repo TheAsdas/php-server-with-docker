@@ -12,10 +12,8 @@ services:
             - net-server
         build: 
             context: ./.docker
-            dockerfile: Dockerfile_PHP
+            dockerfile: Dockerfile
         environment:
             PHP_IDE_CONFIG: "serverName=docker-cli"
-        
-
 networks:
     net-server:
