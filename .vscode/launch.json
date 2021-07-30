@@ -1,7 +1,7 @@
 /**
  * En este archivo está la configuración requerida por XDebug para poder escuchar a tu
  * servidor PHP en Docker. Para poder ocuparlo, tienes que instalar la extensión "PHP
- * Debug", de Felix Becker en el marketplace de VS Code.
+ * Debug", de Felix Becker desde el marketplace de VS Code.
  **/
 {
     "version": "0.2.0",
