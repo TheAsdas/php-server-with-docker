@@ -4,6 +4,7 @@ VOLUME /var/www/html
 
 # Actualizar paquetes
 RUN apt-get update && apt-get upgrade -y
+# Instalar dependencias
 RUN apt-get install -y apt-utils && apt-get install -y unzip wget
 # Instalar composer:
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer

@@ -1,6 +1,7 @@
 version: "3.9"
 services:
     php:
+        image: php/apache/xdebug/composer
         container_name: "php-server"
         ports:
             - "80:80"
@@ -15,5 +16,7 @@ services:
             dockerfile: Dockerfile
         environment:
             PHP_IDE_CONFIG: "serverName=docker-cli"
+        extra_hosts:
+             - host.docker.internal:host-gateway
 networks:
     net-server:

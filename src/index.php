@@ -11,7 +11,6 @@
 <body>
     <!-- Si esto corre, XDebug está funcionando correctamente -->
     <?php 
-    phpinfo();
     xdebug_info(); 
     ?>
 </body>
