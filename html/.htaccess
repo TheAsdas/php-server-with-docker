@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{HTTPS}s on(s)|
+RewriteRule ^ index.php?url=%{REQUEST_URI} [L,QSA]
