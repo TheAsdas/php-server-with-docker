@@ -1,0 +1,46 @@
+/**
+ * En este archivo hay dos tareas:
+ *  - La primera (Typescript- Watch) ejecuta Typescript, quien compila todo el código de TS de la
+ * carpeta ../src/ts a código JS, a la carpeta ../src/js
+ *  - La segunda (Typescript Cleaner - Watch) ejecuta un programa que limpia los archivos JS que
+ * hayan sido eliminado de la carpeta ../src/ts
+ *
+ * Para ocupar estos servicios, requieres de instalar los siguientes módulos con NPM:
+ *  > npm i -g typescript
+ *  > npm i -g ts-cleaner
+ *
+ * En VS Code:
+ * Para activar cualquiera de estos servicios, apreta F1 y escribe "Tasks: Run Task",
+ * y elige el que prefieras en la lista emergente.
+ * Para que estos servicios se inicien automáticamente cada vez que abras este proyecto, apreta
+ * F1, escribe "Tasks: Manage Automatic Tasks in Folder" y selecciona "Allow Automatic Tasks in 
+ * Folder".
+ *
+ * Si tu proyecto no ocupa TS, puedes descartar este archivo.
+ **/
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Typescript - Watch",
+            "type": "typescript",
+            "tsconfig": "./tsconfig.json",
+            "option": "watch",
+            "problemMatcher": [
+                "$tsc-watch"
+            ],
+            "group": "build",
+            "runOptions": {
+                "runOn": "folderOpen"
+            }
+        },
+        {
+            "type": "shell",
+            "label": "Typescript Cleaner - Watch",
+            "command": "ts-cleaner -d ./html/js -s ./ts -w",
+            "runOptions": {
+                "runOn": "folderOpen"
+            }
+        }
+    ]
+}

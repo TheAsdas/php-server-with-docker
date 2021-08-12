@@ -1,0 +1,15 @@
+body{
+    height: 100vh;
+    width: 100vw;
+    overflow: auto;
+}
+
+.fill-parent{
+    min-height: 100%;
+    min-width: 100%;
+}
+
+.fill-content{
+    max-height: fit-content;
+    max-width: fit-content;
+}

@@ -1,0 +1,5 @@
+{
+    "require": {
+        "exussum12/xxhash": "^1.3"
+    }
+}
